@@ -1,0 +1,38 @@
+#what it does is ? it playes 3 rounds itself when you run the programme, it prints the outcomes of both the players ,the round no., and  compare all three rounds and whoever wins the most is the winner,also prints how many ganmes each player won. of its a draw it prints DRAW.
+
+import random
+def main():
+    Round=1
+    Player1_W=0
+    Player2_W=0
+
+    while Round !=4:
+        print("Round"+str(Round))
+        Player1= dice_roll()
+        Player2= dice_roll()
+        print("player1="+str(Player1))
+        print("player2=" + str(Player2))
+        if Player1==Player2:
+            pass
+        elif Player1>Player2:
+            Player1_W=Player1_W +1
+        else :
+            Player2_W= Player2_W +1
+        Round=Round+1
+    print("Player1 round won:",Player1_W)
+    print("Player2 round won:", Player2_W)
+    if Player1_W==Player2_W:
+        print("DRAW")
+    elif Player1_W > Player2_W:
+        print("Player1 WINS :Rounds Won="+str(Player1_W))
+    else:
+        print("Player2 WINS :Rounds Won="+str(Player2_W))
+
+def dice_roll():
+    roll=random.randint(1,6)
+    return roll
+
+
+main() #CALLING THE MAIN FUNCTION
+
+
