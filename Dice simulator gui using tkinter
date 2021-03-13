@@ -1,0 +1,31 @@
+This programme gives you random three dice roll when you press the click button. i tries to use tkinter to add gui to the code.
+
+
+from tkinter import *
+import random
+
+root = Tk()
+root.title("DICE SIMULATOR")
+root.geometry("800x500")
+
+l=Label(root,font=('helvetica',18,'bold'),text="THIS is A DICE SIMULATOR")
+l.pack()
+
+l2=Label(root,font=('helvetica',250,'bold'),text='')
+
+
+def diceroll():
+    event=['\u2680','\u2681','\u2682','\u2683','\u2684','\u2685']
+    l2.configure(text=f"{random.choice(event)}{random.choice(event)}{random.choice(event)}")
+    l2.pack()
+
+
+B=Button(root,font=('helvetica',16,'bold'),text="click!",command=diceroll)
+B.pack()
+
+root.mainloop()
+
+
+
+
+
